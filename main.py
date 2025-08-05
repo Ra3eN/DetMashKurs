@@ -85,7 +85,11 @@ async def begin(message: types.Message):
 
 # Запуск
 async def main():
+    # Проверка токена
+    bot_info = await bot.get_me()
+    print(f"Бот запущен: @{bot_info.username}")
     await dp.start_polling(bot)
 
 if __name__ == '__main__':
+
     asyncio.run(main())
